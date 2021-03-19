@@ -21,6 +21,9 @@ ruleset hello_world {
       send_directive("say", {"something" : "Hello World"})
     }
    
-   
+    rule hello_monkey{
+        select when echo monkey
+        send_directive("say", {"something" : "Hello Monkey"})
+    }
 
   }
