@@ -6,7 +6,7 @@ ruleset hello_world {
   >>
       author "Phil Windley"
       logging on
-      shares hello, _testing
+      shares hello
     }
 
     global {
