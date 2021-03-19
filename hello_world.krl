@@ -1,3 +1,4 @@
+
 ruleset hello_world {
   meta {
     name "Hello World"
@@ -5,20 +6,22 @@ ruleset hello_world {
 A first ruleset for the Quickstart
 >>
     author "Phil Windley"
-    shares hello
+    logging on
+    sharing on
+    provides hello
+ 
   }
-   
   global {
     hello = function(obj) {
-      msg = "Hello " + obj;
+      msg = "Hello " + obj
       msg
-    }
+    };
+ 
   }
-   
   rule hello_world {
     select when echo hello
-    send_directive("say", {"something": "Hello World"})
-     }
+    send_directive("say") with
+      something = "Hello World";
   }
-   
-
+ 
+}
