@@ -18,12 +18,11 @@ ruleset hello_world {
     }
     rule hello_world {
       select when echo hello
+      pre{
+          name = event:attr("name").klog("our passed in name: ")
+      }
+
       send_directive("say", {"something" : "Hello World"})
-    }
-   
-    rule hello_monkey{
-        select when echo monkey
-        send_directive("say", {"something" : "Hello Monkey"})
-    }
+    }  
 
   }
