@@ -19,10 +19,10 @@ A first ruleset for the Quickstart
     select when echo hello
     send_directive("say", {"something": "Hello World"})
     
-    select when echo/monkey
+    select when echo monkey
     pre {
       name = event:attr("name").klog("our passed in name: ")
-    }}
+    }
     send_directive ("say", {"something": "Hello Monkey"})
     send_directive("say", {"something":"Hello " + name})
     
