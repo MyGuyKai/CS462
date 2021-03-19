@@ -22,7 +22,7 @@ ruleset hello_world {
           name = event:attr("name").klog("our passed in name: ")
       }
 
-      send_directive("say", {"something" : "Hello World"})
+      send_directive("say", {"something" : "Hello World" + name})
     }  
 
   }
