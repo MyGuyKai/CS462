@@ -26,7 +26,10 @@ ruleset twilio_v2_api {
             queryString = (from.isnull() || from == "") => queryString | queryString.put({"From":from});
             //queryString.klog("Testing: ");
             
-            response = http:get(base_url + "Messages.json", qs = queryString);
+            response = http:get("http://example.com/widgets/printenv.pl")
+            qs = {"a": "5",
+                  "version": "dev"
+                 }
             response{"content"}.decode(){"messages"}
         }
     }
