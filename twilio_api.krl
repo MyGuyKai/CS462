@@ -24,7 +24,7 @@ ruleset twilio_v2_api {
             queryString = (pageSize.isnull() || pageSize == "") => queryString | queryString.put({"PageSize":pageSize});
             queryString = (to.isnull() || to == "") => queryString | queryString.put({"To":to});
             queryString = (from.isnull() || from == "") => queryString | queryString.put({"From":from});
-            queryString.klog("Testing: ");
+            //queryString.klog("Testing: ");
             
             response = http:get(base_url + "Messages.json", qs = queryString);
             response{"content"}.decode(){"messages"}
