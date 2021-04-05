@@ -1,7 +1,7 @@
 ruleset kaiw8t_twilio_v2 {
     meta {
         use module twilio_v2_api alias twilio
-            with account_sid = meta:rulesetConfig{"apiToken"}
+            with account_sid = meta:rulesetConfig{"account_sid"}
              auth_token =  meta:rulesetConfig{"apiToken"}
 
 
