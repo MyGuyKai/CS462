@@ -21,9 +21,9 @@ ruleset twilio_v2_api {
             base_url = <<https://#{account_sid}:#{auth_token}@api.twilio.com/2010-04-01/Accounts/#{account_sid}/>>;
             queryString = {};
 
-            queryString = (pageSize.isnull() || pageSize == "") => queryString | queryString.put({"PageSize":pageSize});
-            querystringTo = (to.isnull() || to == "") => queryString | querystringTo.put({"To":to});
-            querystringFrom = (from.isnull() || from == "") => queryString | querystringFrom.put({"From":from});
+            queryString1 = (pageSize.isnull() || pageSize == "") => queryString | queryString.put({"PageSize":pageSize});
+            querystringTo = (to.isnull() || to == "") => queryString1 | queryString1.put({"To":to});
+            querystringFrom = (from.isnull() || from == "") => querystringTo | querystringTo.put({"From":from});
             //queryString.klog("Testing: ");
             
             response = http:get("http://example.com/widgets/printenv.pl")
