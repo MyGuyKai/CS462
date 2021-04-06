@@ -4,18 +4,9 @@ ruleset kaiw8t_twilio_v2 {
             with account_sid = meta:rulesetConfig{"account_sid"}
              auth_token =  meta:rulesetConfig{"apiToken"}
 
-        shares __testing
+
     }
 
-    global {
-        __testing = { 
-            "queries": [{ "name": "__testing" } ],
-            "events": [ 
-                { "domain": "test", "type": "send_message", "attrs": ["to", "from", "message"] },
-                { "domain": "test", "type": "get_messages", "attrs": ["to", "from", "pageSize"] }
-             ]
-            }
-    }
 
     rule test_send {
         select when test send_message
