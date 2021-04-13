@@ -5,7 +5,12 @@ ruleset wovyn_base {
           auth_token =  keys:twilio("auth_token")
      
     }
-  
+
+    global {
+        temperature_threshold = 77
+        violation_phone_number = "+14355121155"
+        from_number = "+14407458535"
+      }
     rule threshold_notification {
         select when wovyn threshold_violation
         twilio:send_sms(violation_phone_number,
