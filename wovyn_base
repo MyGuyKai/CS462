@@ -1,6 +1,6 @@
 ruleset wovyn_base {
     meta {
-      use module twilio_v2_api alias twilio
+      use module twilio_api alias twilio
           with account_sid = keys:twilio("account_sid")
           auth_token =  keys:twilio("auth_token")
      
